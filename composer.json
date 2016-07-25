@@ -1,0 +1,28 @@
+{
+    "name": "orchid/widget",
+    "description": "Widget for The Laravel Framework",
+    "type": "library",
+    "license": "MIT",
+    "keywords": [
+        "laravel",
+        "view",
+        "widget",
+        "menu"
+    ],
+    "authors": [
+        {
+            "name": "tabuna",
+            "email": "bliz48rus@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.5.9"
+    },
+    "autoload": {
+        "psr-4": {
+            "Orchid\\Widget\\": "src/"
+        }
+    },
+    "minimum-stability": "alpha",
+    "prefer-stable" : true
+}
