@@ -12,8 +12,6 @@ Widget package from Laravel
 
 ## Installation
 
-## Installation
-
 1. install package
 
 	```php
