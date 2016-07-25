@@ -21,7 +21,7 @@ class Widget implements WidgetContractInterface
      */
     public function get($key)
     {
-        $class = config('dashboard.Widgets.'.$key);
+        $class = config('widget.Widgets.'.$key);
         $widget = new $class();
 
         if ($widget->cache) {

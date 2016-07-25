@@ -1,6 +1,6 @@
 <?php
 
-namespace Orchid\Dashboard\Providers;
+namespace Orchid\Widget;
 
 use Blade;
 use Illuminate\Support\ServiceProvider;
@@ -31,10 +31,10 @@ class WidgetServiceProvider extends ServiceProvider
     protected function registerConfig()
     {
         $this->publishes([
-            __DIR__.'/../Config/dashboard.php' => config_path('dashboard.php'),
+            __DIR__.'/Config/widget.php' => config_path('widget.php'),
         ]);
         $this->mergeConfigFrom(
-            __DIR__.'/../Config/dashboard.php', 'dashboard'
+            __DIR__.'/Config/widget.php', 'widget'
         );
     }
 
@@ -43,16 +43,6 @@ class WidgetServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->commands(Orchid\Widget\Console\MakeWidget::class);
-    }
-
-    /**
-     * @return array
-     */
-    public function provides()
-    {
-        return [
-            Orchid\Widget\Console\MakeWidget::class,
-        ];
+        $this->commands(Console\MakeWidget::class);
     }
 }
