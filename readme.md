@@ -44,32 +44,7 @@ php artisan make:widget NAME
 Как и у контроллера, у виджета может быть собственное представление.
 Рекомендуется распологать файлы виджета в поддиректории views. 
 
-```php
-<?php namespace App\Http\Widgets;
-
-use Orchid\Dashboard\Services\Widget\Widget;
-
-class NAME extends Widget {
-
-    /**
-     * Class constructor.
-     */
-    public function __construct(){
-
-    }
-
-    /**
-     * @return mixed
-     */
-     public function run(){
-         return view('',[
-         ]);
-     }
-
-}
-```
-
-Для регистрации Вашего нового виджета необходимо занести его в `config/dashboard.php`
+Для регистрации Вашего нового виджета необходимо занести его в `config/widget.php`
 
 ```php
 'Widgets' => [
