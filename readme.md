@@ -1,4 +1,8 @@
 ## Widget
+
+[![SensioLabsInsight](https://insight.sensiolabs.com/projects/99c83653-e06f-459e-9433-0103de1f58b3/big.png)](https://insight.sensiolabs.com/projects/99c83653-e06f-459e-9433-0103de1f58b3)
+
+
 Widget package from Laravel 
 
 
