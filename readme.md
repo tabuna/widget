@@ -2,12 +2,9 @@
 Widget package from Laravel 
 
 
-Виджет (widget) — это экземпляр класса Widget или унаследованного от него.
-Это компонент, применяемый, в основном, с целью оформления. 
-Виджеты обычно встраиваются в представления для формирования некоторой сложной, но в то же время самостоятельной части пользовательского интерфейса. 
+Widget (widget) - an instance of Widget, or inherited from him. This component is used mainly for the purpose of registration. Widgets are usually embedded in the representation to form a complex, but at the same time independent of the user interface.
 
-К примеру, виджет календаря может быть использован для рендеринга сложного интерфейса календаря. 
-Виджеты позволяют повторно использовать код пользовательского интерфейса.
+For example, a calendar widget can be used to render complex calendar interface. Widgets allow you to reuse the user interface code.
 
 
 ## Installation
@@ -34,17 +31,17 @@ Widget package from Laravel
 
 
 
-###Создание :
+###Create :
 	
-Чтобы создать новый виджет, необходимо выполнить
+To create a new widget, you need to
 ```php
 php artisan make:widget NAME
 ```
-В папке `app/Http/Widgets` создаться класс шаблон виджета
-Как и у контроллера, у виджета может быть собственное представление.
-Рекомендуется распологать файлы виджета в поддиректории views. 
+In the folder `app / Http / Widgets` create a class widget template
+Like a controller, a widget can also have its own view.
+Recommended siting widget files in a subdirectory views.
 
-Для регистрации Вашего нового виджета необходимо занести его в `config/widget.php`
+To register your new widget, you must bring it to the `config / widget.php`
 
 ```php
 'Widgets' => [
@@ -56,8 +53,8 @@ php artisan make:widget NAME
 
 ## Usage
 
-При вызове виджета поумолчанию исполняется метод "run".
-Для подключения виджета необходимо выполнить в коде используя синтаксис Blade:
+"Run" method is executed when the call widget defaul.
+you must perform in the code to connect the widget using Blade syntax:
 ```php
 @widget('Test')
 ```
