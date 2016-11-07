@@ -21,11 +21,11 @@ class Widget implements WidgetContractInterface
      */
     public function get($key)
     {
-        $class = config('widget.Widgets.'.$key);
+        $class = config('widget.widgets.'.$key);
         $widget = new $class();
 
         if ($widget->cache) {
-            return Cache::remember('Widgets-'.$key, $widget->cache, function (Widget $widget) {
+            return Cache::remember('widgets-'.$key, $widget->cache, function (Widget $widget) {
                 return $widget->run();
             });
         } else {
