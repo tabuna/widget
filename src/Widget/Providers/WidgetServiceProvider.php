@@ -2,7 +2,7 @@
 
 namespace Orchid\Widget\Providers;
 
-use Blade;
+use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\ServiceProvider;
 use Orchid\Widget\Console\MakeWidget;
 
@@ -21,8 +21,14 @@ class WidgetServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->registerConfig();
-        Blade::directive('widget', function ($key) {
-            return "<?php echo (new \\Orchid\\Widget\\Service\\Widget)->get({$key}); ?>";
+        Blade::directive('widget', function ($expression) {
+            $segments = explode(',', preg_replace("/[\(\)\\\]/", '', $expression));
+
+            if (!array_key_exists(1, $segments)) {
+                return '<?php echo (new \Orchid\Widget\Service\Widget)->get(' . $segments[0] . '); ?>';
+            }
+
+            return '<?php echo (new \Orchid\Widget\Service\Widget)->get(' . $segments[0] . ',' . $segments[1] . '); ?>';
         });
     }
 
@@ -32,10 +38,10 @@ class WidgetServiceProvider extends ServiceProvider
     protected function registerConfig()
     {
         $this->publishes([
-            __DIR__.'/../Config/widget.php' => config_path('widget.php'),
+            __DIR__ . '/../Config/widget.php' => config_path('widget.php'),
         ]);
         $this->mergeConfigFrom(
-            __DIR__.'/../Config/widget.php', 'widget'
+            __DIR__ . '/../Config/widget.php', 'widget'
         );
     }
 
