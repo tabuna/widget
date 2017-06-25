@@ -1,28 +1,23 @@
 {
-    "name": "orchid/widget",
-    "description": "Widget for The Laravel Framework",
-    "type": "library",
-    "license": "MIT",
-    "keywords": [
-        "laravel",
-        "view",
-        "widget",
-        "menu"
-    ],
-    "authors": [
-        {
-            "name": "tabuna",
-            "email": "bliz48rus@gmail.com"
-        }
-    ],
-    "require": {
-        "php": ">=7.0"
-    },
-    "autoload": {
-        "psr-4": {
-            "Orchid\\Widget\\": "src/Widget"
-        }
-    },
-    "minimum-stability": "alpha",
-    "prefer-stable" : true
+  "name": "orchid/widget",
+  "description": "Widget for The Laravel Framework",
+  "type": "library",
+  "license": "MIT",
+  "keywords": ["laravel", "view", "widget", "menu"],
+  "authors": [
+    {
+      "name": "tabuna",
+      "email": "bliz48rus@gmail.com"
+    }
+  ],
+  "require": {
+    "php": ">=7.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Orchid\\": "src/Orchid"
+    }
+  },
+  "minimum-stability": "alpha",
+  "prefer-stable": true
 }
