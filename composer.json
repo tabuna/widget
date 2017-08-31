@@ -15,7 +15,7 @@
   },
   "autoload": {
     "psr-4": {
-      "Orchid\\Widget\\": "src/Orchid"
+      "Orchid\\": "src/Orchid"
     }
   },
   "extra": {
@@ -25,6 +25,6 @@
       ]
     }
   },
-  "minimum-stability": "alpha",
+  "minimum-stability": "stable",
   "prefer-stable": true
 }
