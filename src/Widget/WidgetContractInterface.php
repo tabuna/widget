@@ -1,7 +1,12 @@
 <?php
 
-namespace Orchid\Widget\Service;
+declare(strict_types=1);
 
+namespace Orchid\Widget;
+
+/**
+ * Interface WidgetContractInterface.
+ */
 interface WidgetContractInterface
 {
     /**
@@ -16,5 +21,5 @@ interface WidgetContractInterface
      *
      * @return mixed
      */
-    public function run();
+    public function handler();
 }

@@ -1,9 +1,14 @@
 <?php
 
-namespace Orchid\Widget\Console;
+declare(strict_types=1);
+
+namespace Orchid\Widget;
 
 use Illuminate\Console\GeneratorCommand;
 
+/**
+ * Class MakeWidget.
+ */
 class MakeWidget extends GeneratorCommand
 {
     /**
@@ -11,7 +16,7 @@ class MakeWidget extends GeneratorCommand
      *
      * @var string
      */
-    protected $name = 'make:widget';
+    protected $name = 'orchid:widget';
 
     /**
      * The console command description.
@@ -34,7 +39,7 @@ class MakeWidget extends GeneratorCommand
      */
     protected function getStub()
     {
-        return __DIR__.'/stubs/widget.stub';
+        return __DIR__ . '/../../stubs/widget.stub';
     }
 
     /**
