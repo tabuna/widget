@@ -1,7 +1,6 @@
 # Orchid Widget
 
-
-Widget (widget) - an instance of Widget, or inherited from him. This component is used mainly for the purpose of registration. Widgets are usually embedded in the representation to form a complex, but at the same time independent of the user interface.
+ Widgets are usually embedded in the representation to form a complex, but at the same time independent of the user interface.
 
 For example, a calendar widget can be used to render complex calendar interface. Widgets allow you to reuse the user interface code.
 
@@ -13,13 +12,6 @@ install package
 ```php
 composer require orchid/widget
 ```
-
-edit config/app.php service provider :
-
-```php
- Orchid\Widget\WidgetServiceProvider::class
-```
-
 publish package
 
 ```php
@@ -30,7 +22,7 @@ php artisan vendor:publish
 	
 To create a new widget, you need to
 ```php
-php artisan make:widget NAME
+php artisan orchid:widget NameClassWidget
 ```
 In the folder `app/Http/Widgets` create a class widget template
 Like a controller, a widget can also have its own view.
@@ -40,8 +32,8 @@ To register your new widget, you must bring it to the `config/widget.php`
 
 ```php
 //
-'Widgets' => [
-    'test' => App\Widgets\NAME::class
+'widgets' => [
+    'test' => App\Widgets\NameClassWidget::class
 ],
 ```
 	
