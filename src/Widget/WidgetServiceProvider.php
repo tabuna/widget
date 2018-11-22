@@ -17,6 +17,12 @@ class WidgetServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+
+        $this->publishes([
+            __DIR__ . '/../../config/widget.php' => config_path('widget.php'),
+        ], 'config');
+
+
         Blade::directive('widget', function ($expression) {
             $segments = explode(',', preg_replace("/[\(\)\\\]/", '', $expression));
 
@@ -26,5 +32,17 @@ class WidgetServiceProvider extends ServiceProvider
 
             return '<?php echo (new \Orchid\Widget\Widget)->get(' . $segments[0] . ',' . $segments[1] . '); ?>';
         });
+    }
+
+    /**
+     * Register the commands.
+     */
+    public function register()
+    {
+        if (!$this->app->runningInConsole()) {
+            return;
+        }
+
+        $this->commands(MakeWidget::class);
     }
 }
