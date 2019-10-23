@@ -1,3 +1,12 @@
+# Warning this repository is no longer supported
+
+### If you are looking for a good way to use widgets on laravel please see how to use [directive](https://laravel.com/docs/blade#extending-blade). This provides a better experience than package.
+
+----
+
+
+
+
 # Orchid Widget
 
 Widgets embedded in the representation to form a complex, but at the same time independent of the user interface.
